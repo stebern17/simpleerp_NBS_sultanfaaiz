@@ -12,7 +12,7 @@
 
 
         @auth
-        @if(auth()->user()->role === 'superadmin')
+        @if(auth()->user()->role === 'superadmin' || auth()->user()->role === 'admin')
         <div class="mb-4">
             <a href="{{ route('client.create') }}"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow transition duration-200">
@@ -31,7 +31,7 @@
                         <th class="px-4 py-2">Start</th>
                         <th class="px-4 py-2">End</th>
                         @auth
-                        @if(auth()->user()->role === 'superadmin')
+                        @if(auth()->user()->role === 'superadmin' || auth()->user()->role === 'admin')
                         <th class="px-4 py-2">Action</th>
                         @endif
                         @endauth
@@ -48,7 +48,7 @@
                         <td class="px-4 py-2">{{ $client->end_contract_date }}</td>
 
                         @auth
-                        @if(auth()->user()->role === 'superadmin')
+                        @if(auth()->user()->role === 'superadmin' || auth()->user()->role === 'admin')
                         <td class="px-4 py-2 space-x-2">
                             <a href="{{ route('client.edit', $client) }}"
                                 class="text-blue-600 hover:underline">Edit</a>

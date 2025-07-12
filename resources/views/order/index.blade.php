@@ -16,6 +16,11 @@
                     class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200 shadow">
                     + Add Order
                 </a>
+                <a href="{{ route('order.export.pdf') }}" target="_blank"
+                    class="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition duration-200 shadow">
+                    Download PDF
+                </a>
+
             </div>
             @endif
             @endauth

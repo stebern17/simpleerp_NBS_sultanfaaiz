@@ -19,12 +19,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+
+
     Route::middleware(['auth', 'role:superadmin'])->group(function () {
-        Route::resource('client', ClientController::class)->except(['index', 'show']);
         Route::resource('users', UserManagementController::class)->only(['index', 'edit', 'update']);
     });
 
     Route::middleware(['auth', 'role:admin,superadmin'])->group(function () {
+        Route::resource('client', ClientController::class)->except(['index', 'show']);
         Route::resource('order', OrderController::class)->except(['index', 'show']);
     });
 
@@ -35,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('order', [OrderController::class, 'index'])->name('order.index');
         Route::get('order/{order}', [OrderController::class, 'show'])->name('order.show');
+        Route::get('/orders/export/pdf', [OrderController::class, 'exportPdf'])->name('order.export.pdf');
     });
 });
 

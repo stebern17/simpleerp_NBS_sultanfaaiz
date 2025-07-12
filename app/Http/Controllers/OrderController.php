@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Client;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
@@ -62,5 +63,13 @@ class OrderController extends Controller
     {
         $order->delete();
         return redirect()->route('order.index')->with('success', 'Order deleted successfully');
+    }
+
+    public function exportPdf()
+    {
+        $orders = Order::with('client')->get();
+
+        $pdf = Pdf::loadView('order.pdf', compact('orders'));
+        return $pdf->download('Order Report Simpel ERD.pdf');
     }
 }
