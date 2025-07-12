@@ -58,7 +58,7 @@
                     <!-- Buttons -->
                     <div class="flex items-center justify-between">
                         <button type="submit"
-                            class="inline-flex items-center px-4 py-2 rounded-md font-semibold">
+                            class="inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                             Save
                         </button>
                         <a href="{{ route('client.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Cancel</a>

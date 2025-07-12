@@ -20,15 +20,13 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware(['auth', 'role:superadmin'])->group(function () {
         Route::resource('client', ClientController::class)->except(['index', 'show']);
+    });
+
+    Route::middleware(['auth', 'role:admin,superadmin'])->group(function () {
         Route::resource('order', OrderController::class)->except(['index', 'show']);
     });
 
-    // === Admin (CRUD Order only)
-    Route::middleware(['auth', 'role:admin'])->group(function () {
-        Route::resource('order', OrderController::class)->except(['index', 'show']);
-    });
 
-    // === Semua Role (Super Admin, Admin, User) bisa lihat data
     Route::middleware(['auth', 'role:superadmin,admin,user'])->group(function () {
         Route::get('client', [ClientController::class, 'index'])->name('client.index');
         Route::get('client/{client}', [ClientController::class, 'show'])->name('client.show');

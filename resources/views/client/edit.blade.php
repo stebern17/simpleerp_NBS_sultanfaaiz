@@ -11,8 +11,6 @@
                 <form action="{{ route('client.update', $client) }}" method="POST" class="space-y-6">
                     @csrf
                     @method('PUT')
-
-                    <!-- Name -->
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Client Name</label>
                         <input type="text" name="name" id="name" required

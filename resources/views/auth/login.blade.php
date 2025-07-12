@@ -31,17 +31,25 @@
                 <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
-        <div class="mb-6">
-            <p class="text-gray-600 mb-2 font-semibold">Quick Login</p>
-            <div class="flex flex-col sm:flex-row gap-2">
-                <button type="button" onclick="quickLogin('superadmin@example.com', 'password')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                    Login as Super Admin
+        <div class="mb-4 items center">
+            <p class="text-gray-700 mb-3 font-semibold text-lg text-center md:text-start">Quick Login</p>
+            <div class="flex flex-col md:flex-row items-center gap-3">
+                <button type="button"
+                    onclick="quickLogin('superadmin@example.com', 'password')"
+                    class="w-40 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg shadow transition duration-200">
+                    Super Admin
                 </button>
-                <button type="button" onclick="quickLogin('admin@example.com', 'password')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Login as Admin
+
+                <button type="button"
+                    onclick="quickLogin('admin@example.com', 'password')"
+                    class="w-40 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow transition duration-200">
+                    Admin
                 </button>
-                <button type="button" onclick="quickLogin('user@example.com', 'password')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                    Login as User
+
+                <button type="button"
+                    onclick="quickLogin('user@example.com', 'password')"
+                    class="w-40 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow transition duration-200">
+                    User
                 </button>
             </div>
         </div>
