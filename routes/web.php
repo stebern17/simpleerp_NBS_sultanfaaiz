@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserManagementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware(['auth', 'role:superadmin'])->group(function () {
         Route::resource('client', ClientController::class)->except(['index', 'show']);
+        Route::resource('users', UserManagementController::class)->only(['index', 'edit', 'update']);
     });
 
     Route::middleware(['auth', 'role:admin,superadmin'])->group(function () {

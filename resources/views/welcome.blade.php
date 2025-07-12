@@ -14,7 +14,7 @@
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
         <section class="flex flex-col items-center justify-center shadow-lg rounded-lg p-8 w-96 bg-white">
             <div class="text-center text-slate-800">
-                <h2 class="font-bold text-2xl">Welcome to simple ERP</h2>
+                <h2 class="font-bold text-2xl">Welcome to Simple ERP</h2>
                 <p>by Sultan Faaiz</p>
             </div>
 
